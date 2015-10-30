@@ -6,6 +6,7 @@ in development
 
 * Refactor retries in the Mistral action runner to use exponential backoff. Configuration options
   for Mistral have changed. (improvement)
+* Include state_info for Mistral workflow and tasks in the action execution result. (improvement)
 
 1.1.0 - October 27, 2015
 ------------------------
