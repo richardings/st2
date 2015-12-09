@@ -5,7 +5,7 @@ eventlet>=0.13.0
 git+https://github.com/Kami/logshipper.git@stackstorm_patched#egg=logshipper
 git+https://github.com/StackStorm/fabric.git@stanley-patched#egg=fabric
 git+https://github.com/StackStorm/pecan.git@st2-patched#egg=pecan
-git+https://github.com/StackStorm/python-mistralclient.git#egg=python-mistralclient
+git+https://github.com/StackStorm/python-mistralclient.git@st2-1.2.0#egg=python-mistralclient
 git+https://github.com/StackStorm/st2-auth-backend-flat-file.git@master#egg=st2-auth-backend-flat-file
 gitpython==0.3.2.1
 ipaddr
@@ -16,6 +16,7 @@ kombu
 lockfile<0.11,>=0.10.2
 mongoengine<0.9,>=0.8.7
 oslo.config<1.13,>=1.12.1
+oslo.utils<3.1.0
 paramiko<1.16,>=1.15.2
 passlib<1.7,>=1.6.2
 prettytable
