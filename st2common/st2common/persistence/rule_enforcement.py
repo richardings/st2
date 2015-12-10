@@ -13,4 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-__version__ = '1.3dev'
+from st2common.models.db.rule_enforcement import rule_enforcement_access
+from st2common.persistence.base import Access
+
+
+class RuleEnforcement(Access):
+    impl = rule_enforcement_access
+
+    @classmethod
+    def _get_impl(cls):
+        return cls.impl

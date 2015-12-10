@@ -4,6 +4,16 @@ Changelog
 in development
 --------------
 
+* Ability to view causation chains in Trace. This helps reduce the noise when using Trace to
+  identify specific issues. (new-feature)
+* Filter Trace components by model types to only view ActionExecutions, Rules or TriggerInstances.
+  (new-feature)
+* Include ref of the most meaningful object in each trace component. (new-feature)
+* Ability to hide trigger-instance that do not yield a rule enforcement. (new-feature)
+* Change the rule list columns in the CLI from ref, pack, description and enabled to ref, trigger.ref,
+  action.ref and enabled. This aligns closer the UI and also brings important information front and
+  center. (improvement)
+* Action and Trigger filters for rule list (new-feature)
 
 1.2.0 - December 07, 2015
 -------------------------
@@ -54,6 +64,11 @@ in development
 * Support for formatting of alias acknowledgement and result messages in AliasExecution. (new feature)
 * Support for "representation+value" format strings in aliases. (new feature)
 * Support for disabled result and acknowledgement messages in aliases. (new feature)
+* Add ability to write rule enforcement (models that represent a rule evaluation that resulted
+  in an action execution) to db to help debugging rules easier. Also, CLI bindings to list
+  and view these models are added. (new-feature)
+* Purge tool now uses delete_by_query and offloads delete to mongo and doesn't perform app side
+  explicit model deletion to improve speed. (improvement)
 
 1.1.1 - November 13, 2015
 -------------------------
