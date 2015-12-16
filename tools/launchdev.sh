@@ -91,17 +91,17 @@ function st2start(){
     # Copy and overwrite the action contents
     if [ ! -d "$ST2_BASE_DIR" ]; then
         echo "$ST2_BASE_DIR doesn't exist. Creating..."
-        sudo mkdir -p $PACKS_BASE_DIR
+        mkdir -p $PACKS_BASE_DIR
     fi
 
     VIRTUALENVS_DIR=$ST2_BASE_DIR/virtualenvs
 
-    sudo mkdir -p $PACKS_BASE_DIR/default/sensors/
-    sudo mkdir -p $PACKS_BASE_DIR/default/actions/
-    sudo mkdir -p $PACKS_BASE_DIR/default/rules/
-    sudo mkdir -p $VIRTUALENVS_DIR
-    sudo chown -R ${CURRENT_USER}:${CURRENT_USER_GROUP} $PACKS_BASE_DIR
-    sudo chown -R ${CURRENT_USER}:${CURRENT_USER_GROUP} $VIRTUALENVS_DIR
+    mkdir -p $PACKS_BASE_DIR/default/sensors/
+    mkdir -p $PACKS_BASE_DIR/default/actions/
+    mkdir -p $PACKS_BASE_DIR/default/rules/
+    mkdir -p $VIRTUALENVS_DIR
+    chown -R ${CURRENT_USER}:${CURRENT_USER_GROUP} $PACKS_BASE_DIR
+    chown -R ${CURRENT_USER}:${CURRENT_USER_GROUP} $VIRTUALENVS_DIR
     cp -Rp ./contrib/core/ $PACKS_BASE_DIR
     cp -Rp ./contrib/packs/ $PACKS_BASE_DIR
 
@@ -186,8 +186,8 @@ function st2start(){
 
     if [ -n "$ST2_EXPORTER" ]; then
         EXPORTS_DIR=$(exportsdir)
-        sudo mkdir -p $EXPORTS_DIR
-        sudo chown -R ${CURRENT_USER}:${CURRENT_USER_GROUP} $EXPORTS_DIR
+        mkdir -p $EXPORTS_DIR
+        chown -R ${CURRENT_USER}:${CURRENT_USER_GROUP} $EXPORTS_DIR
         echo 'Starting screen session st2-exporter...'
         screen -d -m -S st2-exporter ./virtualenv/bin/python \
             ./st2exporter/bin/st2exporter \
