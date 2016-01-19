@@ -81,6 +81,7 @@ Changelog
 * Replace ``chatops.format_result`` with ``chatops.format_execution_result`` and remove dependency
   on st2 pack from st2contrib.
 * Trace also maintains causation chain through workflows.
+* Add datastore access to Python actions. (new-feature) #2396 [Kale Blankenship]
 
 1.2.0 - December 07, 2015
 -------------------------
