@@ -429,6 +429,8 @@ class ActionExecutionsController(ActionExecutionsControllerMixin, ResourceContro
 
         try:
             liveaction_db = LiveAction.get_by_id(liveaction_id)
+            LOG.info('Cancel: liveaction_db id=%s, status=%s, action=%s',
+                     liveaction_db.id, liveaction_db.status, liveaction_db.action)
         except:
             abort(http_client.INTERNAL_SERVER_ERROR,
                   'Execution object missing link to liveaction %s.' % liveaction_id)
