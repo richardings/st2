@@ -1,6 +1,13 @@
 Changelog
 =========
 
+Fixes Cherry Picked
+----------------------
+
+* Fix cancellation specified in concurrency policies to cancel actions appropriately. Previously, mistral
+  workflow is orphaned and left in a running state. (bug fix)
+
+
 2.1.1 - December 16, 2016
 ----------------------
 
