@@ -23,6 +23,8 @@ in development
   values. (bug fix)
 
   Contribution by Hiroyasu OHYAMA. #3116
+* Fix cancellation specified in concurrency policies to cancel actions appropriately. Previously, mistral
+  workflow is orphaned and left in a running state. (bug fix)
 
 2.1.0 - December 05, 2016
 -------------------------
