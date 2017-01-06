@@ -5,7 +5,7 @@ Fixes Cherry Picked
 ----------------------
 
 * Fix cancellation specified in concurrency policies to cancel actions appropriately. Previously, mistral
-  workflow is orphaned and left in a running state. (bug fix)
+  workflow is orphaned and left in a running state. (bug fix) See https://github.com/StackStorm/st2/pull/3125 and https://github.com/StackStorm/st2/pull/3151
 
 
 2.1.1 - December 16, 2016
