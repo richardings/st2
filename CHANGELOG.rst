@@ -45,6 +45,8 @@ Changelog
   bug fix)
 * Fix a bug with config schema validation not being performed upon registration which could cause
   bad or empty config schema to end up in the system. (bug fix)
+* When action worker is being shutdown and action executions are being abandoned, invoke post run
+  on the action executions to ensure operations such as callback is performed. (bug fix)
 
 2.2.0 - February 27, 2017
 -------------------------
