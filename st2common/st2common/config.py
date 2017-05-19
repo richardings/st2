@@ -251,7 +251,7 @@ def register_opts(ignore_errors=False):
         cfg.StrOpt('keystone_auth_url', default=None, help='Auth endpoint for Keystone.'),
         cfg.StrOpt('cacert', default=None, help='Optional certificate to validate endpoint.'),
         cfg.BoolOpt('insecure', default=False, help='Allow insecure communication with Mistral.'),
-        cfg.IntOpt('jitter_interval', default=1,
+        cfg.FloatOpt('jitter_interval', default=1,
                    help='Jitter interval to smooth out HTTP requests ' +
                         'to mistral tasks and executions API.'),
 
@@ -266,7 +266,7 @@ def register_opts(ignore_errors=False):
     query_opts = [
         cfg.IntOpt('thread_pool_size', default=10,
                    help='Number of threads to use to query external workflow systems.'),
-        cfg.IntOpt('query_interval', default=20,
+        cfg.FloatOpt('query_interval', default=20,
                    help='Time interval between subsequent queries for a context ' +
                         'to external workflow system.')
     ]
