@@ -44,16 +44,18 @@ Changelog
 * Various security related improvements in the enterprise LDAP auth backend. (improvement,
   bug fix)
 * Fix a bug with config schema validation not being performed upon registration which could cause
-  bad or empty config schema to end up in the system. (bug fix)
+  bad or empty config schema to end up in the system. (bug fix, PR #3390)
 * When action worker is being shutdown and action executions are being abandoned, invoke post run
-  on the action executions to ensure operations such as callback is performed. (bug fix)
+  on the action executions to ensure operations such as callback is performed. (bug fix, PR #3412)
 * Fix a bug in query base module when outstanding queries to mistral or other workflow engines
   could cause a tight loop without cooperative yield leading to 100% CPU usage by st2resultstracker
-  process. (bug-fix)
+  process. (bug-fix, PR #3413)
 * Make the query interval to third party workflow systems (including mistral) a configurable
   value. You can now set ``query_interval`` in ``[results_tracker]`` section in ``/etc/st2/st2.conf``.
   With this, the default query interval is set to 20s as opposed to 0.1s which was rather aggressive
-  and could cause CPU churn when there is a large number of outstanding workflows. (improvement)
+  and could cause CPU churn when there is a large number of outstanding workflows.
+  (improvement, PR #3413)
+* Optimize workflow task queries in st2resultstracker (improvement, PR #3420)
 
 2.2.0 - February 27, 2017
 -------------------------
