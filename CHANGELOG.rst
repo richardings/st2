@@ -56,6 +56,8 @@ Changelog
   and could cause CPU churn when there is a large number of outstanding workflows.
   (improvement, PR #3413)
 * Optimize workflow task queries in st2resultstracker (improvement, PR #3420)
+* Fix a bug where action runner throws KeyError on abandoning action executions during process
+  shutdown. (bug fix, PR #3451)
 
 2.2.0 - February 27, 2017
 -------------------------
