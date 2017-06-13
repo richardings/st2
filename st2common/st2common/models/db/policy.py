@@ -175,6 +175,7 @@ class PolicyDB(stormbase.StormFoundationDB, stormbase.ContentPackResourceMixin):
 
     meta = {
         'indexes': [
+            {'fields': ['name']},
             {'fields': ['resource_ref']},
         ]
     }
