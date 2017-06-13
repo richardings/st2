@@ -58,6 +58,8 @@ Changelog
 * Optimize workflow task queries in st2resultstracker (improvement, PR #3420)
 * Fix a bug where action runner throws KeyError on abandoning action executions during process
   shutdown. (bug fix, PR #3451)
+* Add missing database indexes which should speed up various queries on production deployments with
+  large datasets. (improvement, PR #3467)
 
 2.2.0 - February 27, 2017
 -------------------------
