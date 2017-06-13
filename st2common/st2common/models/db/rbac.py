@@ -49,6 +49,7 @@ class RoleDB(stormbase.StormFoundationDB):
     meta = {
         'indexes': [
             {'fields': ['name']},
+            {'fields': ['system']},
             {'fields': ['permission_grants']},
         ]
     }
@@ -71,6 +72,7 @@ class UserRoleAssignmentDB(stormbase.StormFoundationDB):
         'indexes': [
             {'fields': ['user']},
             {'fields': ['role']},
+            {'fields': ['is_remote']},
         ]
     }
 
