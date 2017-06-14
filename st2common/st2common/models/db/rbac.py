@@ -72,7 +72,6 @@ class UserRoleAssignmentDB(stormbase.StormFoundationDB):
         'indexes': [
             {'fields': ['user']},
             {'fields': ['role']},
-            {'fields': ['is_remote']},
         ]
     }
 
