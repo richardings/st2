@@ -46,6 +46,14 @@ class RoleDB(stormbase.StormFoundationDB):
     system = me.BooleanField(default=False)
     permission_grants = me.ListField(field=me.StringField())
 
+    meta = {
+        'indexes': [
+            {'fields': ['name']},
+            {'fields': ['system']},
+            {'fields': ['permission_grants']},
+        ]
+    }
+
 
 class UserRoleAssignmentDB(stormbase.StormFoundationDB):
     """
@@ -59,6 +67,14 @@ class UserRoleAssignmentDB(stormbase.StormFoundationDB):
     user = me.StringField(required=True)
     role = me.StringField(required=True, unique_with='user')
     description = me.StringField()
+
+    meta = {
+        'indexes': [
+            {'fields': ['user']},
+            {'fields': ['role']},
+            {'fields': ['is_remote']},
+        ]
+    }
 
 
 class PermissionGrantDB(stormbase.StormFoundationDB):
@@ -74,6 +90,12 @@ class PermissionGrantDB(stormbase.StormFoundationDB):
     resource_uid = me.StringField(required=False)
     resource_type = me.StringField(required=False)
     permission_types = me.ListField(field=me.StringField())
+
+    meta = {
+        'indexes': [
+            {'fields': ['resource_uid']},
+        ]
+    }
 
 
 # Specialized access objects
